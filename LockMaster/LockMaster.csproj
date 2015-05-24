@@ -99,6 +99,9 @@
     <Compile Include="Step2.xaml.cs">
       <DependentUpon>Step2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Step3.xaml.cs">
+      <DependentUpon>Step3.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -127,6 +130,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Step2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Step3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

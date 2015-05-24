@@ -29,22 +29,29 @@
 
 		<Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
 			<StackPanel VerticalAlignment="Top" Margin="0">
-				<RichTextBlock x:Name="step1_0" HorizontalAlignment="Stretch" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20">
+				<RichTextBlock x:Name="step2_0" HorizontalAlignment="Stretch" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20">
 					<Paragraph Margin="25,0,0,16" TextIndent="-22" >
 						1) From where you left off on Step 1, pull hard on the shackle as if you were trying to open it
 					</Paragraph>
 				</RichTextBlock>
-				<RichTextBlock x:Name="step1_1" HorizontalAlignment="Stretch" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" >
+				<RichTextBlock x:Name="step2_1" HorizontalAlignment="Stretch" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" >
 					<Paragraph Margin="25,0,0,16" TextIndent="-22" >
 						2) Rotate the dial further towards 10 until the dial is locked in place again
 					</Paragraph>
 				</RichTextBlock>
-				<RichTextBlock x:Name="step1_2" HorizontalAlignment="Stretch" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20">
+				<RichTextBlock x:Name="step2_2" HorizontalAlignment="Stretch" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20">
 					<Paragraph Margin="25,0,0,16" TextIndent="-22" >
-						3) Once the dial is stuck in the next notch, wiggle it a little. If you're stuck between two whole digits such as 5 and 6, release pressure and spin the dial further until you're in the next notch. If the dial wiggles between half numbers (e.g., 5.5 and 6.5), enter that whole number between (e.g., 6)
+						3) Once the dial is stuck in the next notch, wiggle it a little. If you're stuck between two whole digits such as 5 and 6, release pressure and spin the dial further until you're in the next notch. If the dial wiggles between half numbers (e.g., 5.5 and 6.5), enter that whole number (e.g., 6)
 					</Paragraph>
 				</RichTextBlock>
-				<TextBox x:Name="secondPosition" InputScope="Number" PlaceholderText="Second Whole Number" Margin="20, 20, 20, 0" />
+				<Grid VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled"  >
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="130"/>
+					</Grid.ColumnDefinitions>
+					<TextBox x:Name="secondPosition" InputScope="Number" PlaceholderText="Second Number" Margin="10,9,10,0" Grid.Column="0" />
+					<Button x:Name="nextButton" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Next" Margin="10,0,10,0" Grid.Column="1" />
+				</Grid>
 			</StackPanel>
 		</Grid>
 	</Grid>

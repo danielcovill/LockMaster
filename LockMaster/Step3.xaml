@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="LockMaster.Step3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LockMaster"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="Lock Master" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="Step 3" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+			<StackPanel VerticalAlignment="Top" Margin="0">
+				<RichTextBlock x:Name="step1_0" HorizontalAlignment="Stretch" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20">
+					<Paragraph Margin="25,0,0,16" TextIndent="-22" >
+						1) From where you left off on Step 2, pull only half as hard on the shackle so you can still turn the dial
+					</Paragraph>
+				</RichTextBlock>
+				<RichTextBlock x:Name="step1_1" HorizontalAlignment="Stretch" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" >
+					<Paragraph Margin="25,0,0,16" TextIndent="-22" >
+						2) Rotate the dial further towards higher numbers until you feel a slight resistance. You may need to rotate the dial back and forth to make sure you have the exact spot
+					</Paragraph>
+				</RichTextBlock>
+				<RichTextBlock x:Name="step1_2" HorizontalAlignment="Stretch" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20">
+					<Paragraph Margin="25,0,0,16" TextIndent="-22" >
+						3) Enter this number into last location. This position may be a half number. If that's the case, enter the half number (e.g. 12.5)
+					</Paragraph>
+				</RichTextBlock>
+				<Grid VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled"  >
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="130"/>
+					</Grid.ColumnDefinitions>
+					<TextBox x:Name="thirdPosition" InputScope="Number" PlaceholderText="Last Number" Margin="10,9,10,0" Grid.Column="0" />
+					<Button x:Name="submitButton" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Next" Margin="10,0,10,0" Grid.Column="1" />
+				</Grid>
+			</StackPanel>
+        </Grid>
+    </Grid>
+</Page>
