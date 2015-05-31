@@ -107,5 +107,10 @@ namespace LockMaster
 		}
 
 		#endregion
+
+		private void startButton_Click(object sender, RoutedEventArgs e)
+		{
+			Frame.Navigate(typeof(Step1));
+		}
 	}
 }
