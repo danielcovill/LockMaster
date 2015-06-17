@@ -8,28 +8,54 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid x:Name="LayoutRoot">
 
-        <Grid.ChildrenTransitions>
-            <TransitionCollection>
-                <EntranceThemeTransition/>
-            </TransitionCollection>
-        </Grid.ChildrenTransitions>
+	<Grid x:Name="LayoutRoot">
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+		<Grid.ChildrenTransitions>
+			<TransitionCollection>
+				<EntranceThemeTransition/>
+			</TransitionCollection>
+		</Grid.ChildrenTransitions>
 
-        <!-- Title Panel -->
-        <StackPanel Grid.Row="0" Margin="19,0,0,0">
-            <TextBlock Text="Lock Master" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
-            <TextBlock Text="Step 4" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
-        </StackPanel>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
 
-        <!--TODO: Content should be placed within the following grid-->
-        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+		<!-- Title Panel -->
+		<StackPanel Grid.Row="0" Margin="19,0,0,0">
+			<TextBlock Text="Lock Master" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+			<TextBlock Text="Step 4" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+		</StackPanel>
 
-        </Grid>
-    </Grid>
+		<!--TODO: Content should be placed within the following grid-->
+		<Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+			<StackPanel VerticalAlignment="Top" Margin="0">
+				<RichTextBlock x:Name="step4_0" HorizontalAlignment="Stretch" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20">
+					<Paragraph Margin="25,0,0,16" TextIndent="-22" >
+						1) Set the dial to # and pull hard on the shackle. Wiggle the dial and pay attention to how far it can go in either direction.
+					</Paragraph>
+				</RichTextBlock>
+				<RichTextBlock x:Name="step4_1" HorizontalAlignment="Stretch" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" >
+					<Paragraph Margin="25,0,0,16" TextIndent="-22" >
+						2) Set the dial to # and pull hard on the shackle again. Wiggle the dial and pay attention to how far it can go in either direction.
+					</Paragraph>
+				</RichTextBlock>
+				<RichTextBlock x:Name="step4_2" HorizontalAlignment="Stretch" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20">
+					<Paragraph Margin="25,0,0,16" TextIndent="-22" >
+						3) Choose the number on the dial that has the greater amount of wiggle room.
+					</Paragraph>
+				</RichTextBlock>
+				<Grid VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled"  >
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="auto"/>
+						<ColumnDefinition Width="auto"/>
+					</Grid.ColumnDefinitions>
+
+					<RadioButton x:Name="thirdOpitonOne" VerticalAlignment="Top" Content="def" Grid.Column="0" Click="thirdOpitonOne_Click" GroupName="thirdOption" HorizontalAlignment="Center" />
+					<RadioButton x:Name="thirdOptionTwo" VerticalAlignment="Top" Content="abc" Grid.Column="1" Click="thirdOptionTwo_Click" GroupName="thirdOption" HorizontalAlignment="Center" />
+				</Grid>
+			</StackPanel>
+		</Grid>
+	</Grid>
 </Page>

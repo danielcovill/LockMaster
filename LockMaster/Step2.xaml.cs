@@ -106,6 +106,11 @@ namespace LockMaster
             this.navigationHelper.OnNavigatedFrom(e);
         }
 
-        #endregion
-    }
+		#endregion
+
+		private void nextButton_Click(object sender, RoutedEventArgs e)
+		{
+			Frame.Navigate(typeof(Step3));
+		}
+	}
 }

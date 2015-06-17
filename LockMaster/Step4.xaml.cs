@@ -107,5 +107,14 @@ namespace LockMaster
 		}
 
 		#endregion
+
+		private void thirdOpitonOne_Click(object sender, RoutedEventArgs e)
+		{
+			Frame.Navigate(typeof(Step5));
+		}
+		private void thirdOptionTwo_Click(object sender, RoutedEventArgs e)
+		{
+			Frame.Navigate(typeof(Step5));
+		}
 	}
 }

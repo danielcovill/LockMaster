@@ -51,7 +51,7 @@
 						<ColumnDefinition Width="130"/>
 					</Grid.ColumnDefinitions>
 					<TextBox x:Name="thirdPosition" InputScope="Number" PlaceholderText="Last Number" Margin="10,9,10,0" Grid.Column="0" />
-					<Button x:Name="submitButton" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Next" Margin="10,0,10,0" Grid.Column="1" />
+					<Button x:Name="submitButton" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Next" Margin="10,0,10,0" Grid.Column="1" Click="submitButton_Click" />
 				</Grid>
 			</StackPanel>
         </Grid>

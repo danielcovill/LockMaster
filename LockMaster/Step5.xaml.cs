@@ -8,12 +8,12 @@ namespace LockMaster
 	/// <summary>
 	/// An empty page that can be used on its own or navigated to within a Frame.
 	/// </summary>
-	public sealed partial class Step1 : Page
+	public sealed partial class Step5 : Page
 	{
 		private NavigationHelper navigationHelper;
 		private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
-		public Step1()
+		public Step5()
 		{
 			InitializeComponent();
 			
@@ -54,7 +54,7 @@ namespace LockMaster
 		{
 			if(e.PageState != null)
 			{
-				firstPosition.Text = Convert.ToString(e.PageState["FirstNotchPosition"]);
+				//firstPosition.Text = Convert.ToString(e.PageState["FirstNotchPosition"]);
 			}
 		}
 
@@ -70,11 +70,11 @@ namespace LockMaster
 		{
 			if(e.PageState.ContainsKey("FirstNotchPosition"))
 			{
-				e.PageState["FirstNotchPosition"] = firstPosition.Text;
+				//e.PageState["FirstNotchPosition"] = firstPosition.Text;
 			}
 			else
 			{
-				e.PageState.Add("FirstNotchPosition", firstPosition.Text);
+				//e.PageState.Add("FirstNotchPosition", firstPosition.Text);
 			}
 		}
 
@@ -104,10 +104,6 @@ namespace LockMaster
 		}
 
 		#endregion
-
-		private void nextButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-		{
-			Frame.Navigate(typeof(Step2));
-		}
+		
 	}
 }
