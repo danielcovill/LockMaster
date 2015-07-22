@@ -5,8 +5,8 @@ namespace LockMaster
 {
 	/// <summary>
 	/// The lock computation model contains the user input values of the lock states they've
-	/// determined. Some of the values are computed and will return null until the appropriate
-	/// prerequisite values have been filled.
+	/// determined. Computed values will return null until the appropriate prerequisite values 
+	/// have been filled.
 	/// </summary>
 	public class LockComputationModel
 	{
@@ -15,6 +15,8 @@ namespace LockMaster
 		public int? SecondNotchPosition { get; set; }
 
 		public double? ThirdNotchPosition { get; set; }
+
+		public int? SelectedSolutionThirdDigitIndex { get; set; }
 
 		public int? SolutionFirstValue
 		{
@@ -77,7 +79,5 @@ namespace LockMaster
 				return _thirdSolutionDigits;
 			}
 		}
-
-		public int? SelectedSolutionThirdDigitIndex { get; set; }
 	}
 }

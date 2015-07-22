@@ -56,6 +56,11 @@ namespace LockMaster
 			{
 				firstPosition.Text = Convert.ToString(e.PageState["FirstNotchPosition"]);
 			}
+			else if (true)
+			{
+				// TODO: If the application data object has the appropriate value, load it into the firstPosition
+
+			}
 		}
 
 		/// <summary>
@@ -107,6 +112,7 @@ namespace LockMaster
 
 		private void nextButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
 		{
+			// TODO: save the state of the input into the application data object
 			Frame.Navigate(typeof(Step2));
 		}
 	}

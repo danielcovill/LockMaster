@@ -89,6 +89,7 @@ namespace LockMaster
 				}
 			}
 
+
 			// Ensure the current window is active
 			Window.Current.Activate();
 		}
@@ -112,36 +113,12 @@ namespace LockMaster
 		/// </summary>
 		/// <param name="sender">The source of the suspend request.</param>
 		/// <param name="e">Details about the suspend request.</param>
-		private void OnSuspending(object sender, SuspendingEventArgs e)
+		private async void OnSuspending(object sender, SuspendingEventArgs e)
 		{
 			var deferral = e.SuspendingOperation.GetDeferral();
-
-			// TODO: Save application state and stop any background activity
+			await Common.SuspensionManager.SaveAsync();
 			deferral.Complete();
 		}
 
-		private LockComputationModel _applicationDataObject;
-		public LockComputationModel ApplicationDataObject
-		{
-			get { return _applicationDataObject; }
-			set
-			{
-				if (value != _applicationDataObject)
-				{
-					_applicationDataObject = value;
-					OnApplicationDataObjectChanged(EventArgs.Empty);
-				}
-			}
-		}
-
-		public event EventHandler ApplicationDataObjectChanged;
-		private void OnApplicationDataObjectChanged(EventArgs e)
-		{
-			EventHandler handler = ApplicationDataObjectChanged;
-			if (handler != null)
-			{
-				handler(this, e);
-			}
-		}
 	}
 }
