@@ -2,6 +2,7 @@
 using LockMaster.Common;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml;
 
 namespace LockMaster
 {
@@ -52,14 +53,10 @@ namespace LockMaster
 		/// session.  The state will be null the first time a page is visited.</param>
 		private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
 		{
-			if(e.PageState != null)
+			string firstPositionText = ((LockComputationModel)Application.Current.Resources["LockModel"]).FirstNotchPosition.ToString();
+      if (!String.IsNullOrEmpty(firstPositionText))
 			{
-				firstPosition.Text = Convert.ToString(e.PageState["FirstNotchPosition"]);
-			}
-			else if (true)
-			{
-				// TODO: If the application data object has the appropriate value, load it into the firstPosition
-
+				firstPosition.Text = firstPositionText;
 			}
 		}
 
@@ -73,13 +70,14 @@ namespace LockMaster
 		/// serializable state.</param>
 		private void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
 		{
-			if(e.PageState.ContainsKey("FirstNotchPosition"))
+			int firstPositionValue = 0;
+			if(Int32.TryParse(firstPosition.Text, out firstPositionValue))
 			{
-				e.PageState["FirstNotchPosition"] = firstPosition.Text;
-			}
+				((LockComputationModel)Application.Current.Resources["LockModel"]).FirstNotchPosition = firstPositionValue;
+      }
 			else
 			{
-				e.PageState.Add("FirstNotchPosition", firstPosition.Text);
+				//TODO: Implement error case
 			}
 		}
 
@@ -112,7 +110,6 @@ namespace LockMaster
 
 		private void nextButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
 		{
-			// TODO: save the state of the input into the application data object
 			Frame.Navigate(typeof(Step2));
 		}
 	}

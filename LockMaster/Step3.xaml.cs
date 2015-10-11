@@ -67,6 +67,11 @@ namespace LockMaster
 		/// session.  The state will be null the first time a page is visited.</param>
 		private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
 		{
+			string thirdPositionText = ((LockComputationModel)Application.Current.Resources["LockModel"]).ThirdNotchPosition.ToString();
+			if (!String.IsNullOrEmpty(thirdPositionText))
+			{
+				thirdPosition.Text = thirdPositionText;
+			}
 		}
 
 		/// <summary>
@@ -79,6 +84,15 @@ namespace LockMaster
 		/// serializable state.</param>
 		private void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
 		{
+			int thirdPositionValue = 0;
+			if (Int32.TryParse(thirdPosition.Text, out thirdPositionValue))
+			{
+				((LockComputationModel)Application.Current.Resources["LockModel"]).ThirdNotchPosition = thirdPositionValue;
+			}
+			else
+			{
+				//TODO: Implement error case
+			}
 		}
 
 		#region NavigationHelper registration

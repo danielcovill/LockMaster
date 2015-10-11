@@ -110,6 +110,10 @@ namespace LockMaster
 
 		private void startButton_Click(object sender, RoutedEventArgs e)
 		{
+			if(!Application.Current.Resources.ContainsKey("LockModel"))
+			{
+				Application.Current.Resources.Add("LockModel", new LockComputationModel());
+			}
 			Frame.Navigate(typeof(Step1));
 		}
 	}
